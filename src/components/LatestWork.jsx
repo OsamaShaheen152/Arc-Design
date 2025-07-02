@@ -1,62 +1,108 @@
-import latestWorkImg from "./../assets/latestWorks.svg";
-function LatestWork() {
-  return (
-    <div className="my-28">
-      <h2 className="mb-16 text-center text-3xl font-semibold sm:text-4xl sm:font-bold">
-        My latest Work
-      </h2>
-      <div className="mx-auto flex w-[90%] flex-col flex-wrap items-center justify-between gap-8 px-5 md:flex-row md:items-center md:justify-around md:gap-6">
-        <div className="flex h-96 flex-col justify-between">
-          <div className="w-80">
-            <img src={latestWorkImg} alt="" className="w-full object-contain" />
-          </div>
+import { useState } from "react";
+import { Calendar, ExternalLink, Loader2, AlertCircle } from "lucide-react";
+import { useProjects } from "../hooks/useProjects";
+import ProjectCard from "./ProjectCard";
 
-          <span className="text-xl font-semibold">Purple Haze</span>
-          <span className="text-xl font-semibold">Jimi Hendrix</span>
-        </div>
-        <div className="flex h-96 flex-col justify-between">
-          <div className="w-80">
-            <img src={latestWorkImg} alt="" className="w-full object-contain" />
-          </div>
+const LatestWork = ({ onProjectClick }) => {
+  const { projects, loading, error } = useProjects();
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-          <span className="text-xl font-semibold">Purple Haze</span>
-          <span className="text-xl font-semibold">Jimi Hendrix</span>
-        </div>
-        <div className="flex h-96 flex-col justify-between">
-          <div className="w-80">
-            <img src={latestWorkImg} alt="" className="w-full object-contain" />
-          </div>
+  const openModal = (project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+    if (onProjectClick) onProjectClick(project);
+  };
 
-          <span className="text-xl font-semibold">Purple Haze</span>
-          <span className="text-xl font-semibold">Jimi Hendrix</span>
-        </div>
-        <div className="flex h-96 flex-col justify-between">
-          <div className="w-80">
-            <img src={latestWorkImg} alt="" className="w-full object-contain" />
-          </div>
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedProject(null);
+  };
 
-          <span className="text-xl font-semibold">Purple Haze</span>
-          <span className="text-xl font-semibold">Jimi Hendrix</span>
-        </div>
-        <div className="flex h-96 flex-col justify-between">
-          <div className="w-80">
-            <img src={latestWorkImg} alt="" className="w-full object-contain" />
+  if (loading) {
+    return (
+      <div className="py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-4xl font-bold text-gray-900 sm:text-5xl">
+              My Latest{" "}
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Work
+              </span>
+            </h2>
+            <p className="mx-auto max-w-2xl text-lg text-gray-600">
+              Discover our recent architectural and interior design projects
+            </p>
           </div>
-
-          <span className="text-xl font-semibold">Purple Haze</span>
-          <span className="text-xl font-semibold">Jimi Hendrix</span>
-        </div>
-        <div className="flex h-96 flex-col justify-between">
-          <div className="w-80">
-            <img src={latestWorkImg} alt="" className="w-full object-contain" />
+          <div className="flex items-center justify-center py-12">
+            <Loader2 className="h-8 w-8 animate-spin text-blue-600" />
+            <span className="ml-2 text-gray-600">Loading projects...</span>
           </div>
-
-          <span className="text-xl font-semibold">Purple Haze</span>
-          <span className="text-xl font-semibold">Jimi Hendrix</span>
         </div>
       </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-4xl font-bold text-gray-900 sm:text-5xl">
+              My Latest{" "}
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Work
+              </span>
+            </h2>
+          </div>
+          <div className="flex items-center justify-center py-12">
+            <AlertCircle className="h-8 w-8 text-red-500" />
+            <span className="ml-2 text-red-600">{error}</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-16 text-center">
+          <h2 className="mb-6 text-4xl font-bold text-gray-900 sm:text-5xl">
+            My Latest{" "}
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Work
+            </span>
+          </h2>
+          <p className="mx-auto max-w-3xl text-xl leading-relaxed text-gray-600">
+            Explore our portfolio of innovative architectural designs and
+            stunning interior spaces. Each project represents our commitment to
+            excellence and creative vision.
+          </p>
+        </div>
+
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project, index) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              onClick={() => openModal(project)}
+              index={index}
+            />
+          ))}
+        </div>
+
+        {projects.length === 0 && (
+          <div className="py-12 text-center">
+            <p className="text-lg text-gray-500">No projects found.</p>
+          </div>
+        )}
+      </div>
+
+      {/* Project Modal */}
     </div>
   );
-}
+};
 
 export default LatestWork;
