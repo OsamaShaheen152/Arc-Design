@@ -1,4 +1,4 @@
-import { Code2, Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Home, Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 
 function Footer() {
   return (
@@ -10,7 +10,7 @@ function Footer() {
           <div className="lg:col-span-2">
             <div className="mb-6 flex items-center space-x-3">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-purple-600">
-                <Code2 className="h-7 w-7 text-white" />
+                <Home className="h-7 w-7 text-white" />
               </div>
               <div>
                 <h3 className="text-2xl font-bold">Make It Organized</h3>

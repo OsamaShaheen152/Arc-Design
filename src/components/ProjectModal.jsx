@@ -3,7 +3,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-import "../../public/projects_images.json";
 
 Modal.setAppElement("#root");
 function ProjectModal({ project, isModalOpen, closeModalHandler }) {
@@ -36,6 +35,7 @@ function ProjectModal({ project, isModalOpen, closeModalHandler }) {
       zIndex: 1000, // Ensure overlay is above other content
     },
   };
+
   return (
     <div>
       <Modal
@@ -69,7 +69,7 @@ function ProjectModal({ project, isModalOpen, closeModalHandler }) {
               }}
               key={imgIdx}
             >
-              <img src={image} />
+              <img src={image} loading="lazy" />
             </SwiperSlide>
           ))}
         </Swiper>
