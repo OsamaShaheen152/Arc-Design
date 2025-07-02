@@ -1,24 +1,11 @@
-import { useState } from "react";
 import { Calendar, ExternalLink, Loader2, AlertCircle } from "lucide-react";
 import { useProjects } from "../hooks/useProjects";
 import ProjectCard from "./ProjectCard";
 
-const LatestWork = ({ onProjectClick }) => {
+const LatestWork = ({ openModalHandler }) => {
   const { projects, loading, error } = useProjects();
-  const [selectedProject, setSelectedProject] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = (project) => {
-    setSelectedProject(project);
-    setIsModalOpen(true);
-    if (onProjectClick) onProjectClick(project);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedProject(null);
-  };
-
+  // Loading
   if (loading) {
     return (
       <div className="py-20">
@@ -43,6 +30,7 @@ const LatestWork = ({ onProjectClick }) => {
     );
   }
 
+  // Error
   if (error) {
     return (
       <div className="py-20">
@@ -87,7 +75,7 @@ const LatestWork = ({ onProjectClick }) => {
             <ProjectCard
               key={project.id}
               project={project}
-              onClick={() => openModal(project)}
+              onClick={() => openModalHandler(project)}
               index={index}
             />
           ))}

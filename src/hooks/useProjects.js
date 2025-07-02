@@ -25,7 +25,6 @@ export const useProjects = () => {
         //   images: project.images.map((img) => img.src), // Use path for image URLs
         // }));
         setProjects(data);
-        console.log(data);
       } catch (err) {
         console.error("Error fetching projects:", err);
         setError("Failed to load projects");

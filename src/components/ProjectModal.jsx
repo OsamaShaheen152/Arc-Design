@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Modal from "react-modal";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow } from "swiper/modules";
@@ -7,16 +6,7 @@ import "swiper/css/effect-coverflow";
 import "../../public/projects_images.json";
 
 Modal.setAppElement("#root");
-function ProjectModal({ project }) {
-  const [modalIsOpen, setModalIsOpen] = useState(true);
-
-  const openModalHandler = () => {
-    setModalIsOpen(true);
-  };
-  const closeModalHandler = () => {
-    setModalIsOpen(false);
-  };
-
+function ProjectModal({ project, isModalOpen, closeModalHandler }) {
   // Modal Style
   const modalStyle = {
     content: {
@@ -49,7 +39,7 @@ function ProjectModal({ project }) {
   return (
     <div>
       <Modal
-        isOpen={modalIsOpen}
+        isOpen={isModalOpen}
         onRequestClose={closeModalHandler}
         style={modalStyle}
       >
@@ -79,7 +69,7 @@ function ProjectModal({ project }) {
               }}
               key={imgIdx}
             >
-              <img src={image.src} />
+              <img src={image} />
             </SwiperSlide>
           ))}
         </Swiper>

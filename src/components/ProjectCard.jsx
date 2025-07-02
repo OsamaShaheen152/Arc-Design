@@ -20,7 +20,7 @@ const ProjectCard = ({ project, onClick, index }) => {
   return (
     <div
       className="animate-in slide-in-from-bottom-4 group transform cursor-pointer rounded-2xl border border-gray-100 bg-white shadow-lg transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl"
-      onClick={onClick}
+      onClick={() => onClick(project)}
       style={{ animationDelay: `${index * 100}ms` }}
     >
       {/* Project main img */}
@@ -47,6 +47,7 @@ const ProjectCard = ({ project, onClick, index }) => {
       </div>
 
       <div className="p-6">
+        {/* this for dots */}
         <div className="mb-3 flex items-center justify-between">
           <div className="flex items-center space-x-1">
             {[...Array(5)].map((_, i) => (

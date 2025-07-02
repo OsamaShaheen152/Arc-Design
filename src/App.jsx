@@ -11,12 +11,12 @@ function App() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = (project) => {
+  const openModalHandler = (project) => {
     setSelectedProject(project);
     setIsModalOpen(true);
   };
 
-  const closeModal = () => {
+  const closeModalHandler = () => {
     setIsModalOpen(false);
     setSelectedProject(null);
   };
@@ -35,9 +35,13 @@ function App() {
         </section>
 
         <section id="projects" className="bg-white/50 py-12">
-          <LatestWork onProjectClick={openModal} />
+          <LatestWork openModalHandler={openModalHandler} />
         </section>
-        <ProjectModal />
+        <ProjectModal
+          project={selectedProject}
+          isModalOpen={isModalOpen}
+          closeModalHandler={closeModalHandler}
+        />
       </main>
 
       {/* Enhanced Footer */}
