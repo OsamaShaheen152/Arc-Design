@@ -1,5 +1,5 @@
 import { ChevronDown, ArrowRight } from "lucide-react";
-import HeroImg from "../assets/hero.svg";
+import HeroImg from "../../public/assets/hero.svg";
 
 function Hero() {
   return (

@@ -55,7 +55,7 @@ function ProjectModal({ project, isModalOpen, closeModalHandler }) {
           }}
           slidesPerView="auto" // Auto-fit slides
           centeredSlides // Center the active slide
-          loop // Enable infinite loop
+          loop={project?.images.length >= 3} // Enable infinite loop
           style={{ width: "100%", padding: "20px" }}
         >
           {project?.images.map((image, imgIdx) => (
