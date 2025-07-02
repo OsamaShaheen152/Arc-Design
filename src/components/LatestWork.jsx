@@ -1,7 +1,7 @@
 import { Calendar, ExternalLink, Loader2, AlertCircle } from "lucide-react";
 import ProjectCard from "./ProjectCard";
 
-const PROJECTS = [
+let PROJECTS = [
   {
     id: 1,
     project_name: "Project 1",
