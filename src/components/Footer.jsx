@@ -2,7 +2,10 @@ import { Home, Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 
 function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
+    <footer
+      id="footer"
+      className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 gap-8 py-16 md:grid-cols-2 lg:grid-cols-4">
@@ -39,7 +42,7 @@ function Footer() {
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="mailto:osamashaheen152@gmail.com"
                 className="rounded-full bg-white/10 p-3 transition-all duration-200 hover:scale-110 hover:bg-white/20"
               >
                 <Mail className="h-5 w-5" />
@@ -77,15 +80,6 @@ function Footer() {
                   Projects
                 </a>
               </li>
-
-              <li>
-                <a
-                  href="#contact"
-                  className="inline-block transform text-gray-300 transition-colors duration-200 hover:translate-x-1 hover:text-white"
-                >
-                  Contact
-                </a>
-              </li>
             </ul>
           </div>
 
@@ -95,22 +89,22 @@ function Footer() {
               Get in Touch
             </h4>
             <div className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <MapPin className="mt-1 h-5 w-5 flex-shrink-0 text-blue-400" />
-                <div>
-                  <p className="text-sm text-gray-300">123 Design Street</p>
-                  <p className="text-sm text-gray-300">
-                    Architecture City, AC 12345
-                  </p>
-                </div>
+              <div className="flex items-center space-x-3">
+                <Phone className="h-5 w-5 flex-shrink-0 text-blue-400" />
+                <p className="text-sm text-gray-300">01093039374</p>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 flex-shrink-0 text-blue-400" />
-                <p className="text-sm text-gray-300">+1 (555) 123-4567</p>
+                <p className="text-sm text-gray-300">01100859083</p>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 flex-shrink-0 text-blue-400" />
-                <p className="text-sm text-gray-300">hello@arcdesign.com</p>
+                <a
+                  href="mailto:osamashaheen152@gmail.com"
+                  className="text-sm text-gray-300"
+                >
+                  osamashaheen152@gmail.com
+                </a>
               </div>
             </div>
           </div>

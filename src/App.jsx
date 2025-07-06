@@ -6,7 +6,6 @@ import MainWork from "./components/MainWork";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ProjectModal from "./components/ProjectModal";
-
 function App() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -24,6 +23,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       {/* Header */}
+
       <Navbar />
       {/* Main Content */}
       <main>

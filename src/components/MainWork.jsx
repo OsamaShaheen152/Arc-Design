@@ -4,23 +4,23 @@ function MainWork() {
   const services = [
     {
       icon: <Building className="h-8 w-8" />,
-      title: "Architectural Design",
+      title: "Residential",
       description:
-        "Innovative architectural solutions that blend functionality with aesthetic appeal. From concept to completion, we create spaces that inspire.",
+        " Crafting personalized, functional, and aesthetically pleasing home interiors, tailored to clients' lifestyles, with a focus on comfort, space optimization, and timeless design.",
       color: "from-blue-500 to-blue-600",
     },
     {
       icon: <Home className="h-8 w-8" />,
-      title: "Interior Design",
+      title: "Commercial",
       description:
-        "Transform your spaces with our expert interior design services. We create harmonious environments that reflect your personality and lifestyle.",
+        "Designing dynamic, professional spaces for businesses, emphasizing brand identity, functionality, and user experience to enhance productivity and client engagement.",
       color: "from-purple-500 to-purple-600",
     },
     {
       icon: <Palette className="h-8 w-8" />,
-      title: "Space Planning",
+      title: "Shop Drawings",
       description:
-        "Optimize your space with our strategic planning approach. We maximize functionality while maintaining design excellence.",
+        "Producing detailed technical drawings for interior elements, ensuring precise implementation of design concepts with accurate measurements, materials, and construction details.",
       color: "from-pink-500 to-pink-600",
     },
   ];
@@ -42,7 +42,7 @@ function MainWork() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="flex flex-col items-center justify-center gap-8 md:flex-row">
           {services.map((service, index) => (
             <div
               key={index}

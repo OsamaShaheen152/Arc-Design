@@ -41,19 +41,13 @@ function Navbar() {
             </a>
 
             <a
-              href="#contact"
+              href="#footer"
               className="font-medium text-gray-700 transition-colors duration-200 hover:text-blue-600"
             >
               Contact
             </a>
           </nav>
           <div className="flex items-center space-x-3">
-            <a
-              href="#"
-              className="rounded-full p-2 text-gray-600 transition-colors duration-200 hover:bg-blue-50 hover:text-blue-600"
-            >
-              <Github className="h-5 w-5" />
-            </a>
             <a
               href="#"
               className="rounded-full p-2 text-gray-600 transition-colors duration-200 hover:bg-blue-50 hover:text-blue-600"

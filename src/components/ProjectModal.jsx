@@ -1,8 +1,12 @@
+// import { EffectCoverflow } from "swiper/modules";
+// import "swiper/css/effect-coverflow";
 import Modal from "react-modal";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/effect-coverflow";
+import "swiper/css/effect-cube";
+import "swiper/css/pagination";
+import { EffectCube, Pagination } from "swiper/modules";
+import { X } from "lucide-react";
 
 Modal.setAppElement("#root");
 function ProjectModal({ project, isModalOpen, closeModalHandler }) {
@@ -13,14 +17,16 @@ function ProjectModal({ project, isModalOpen, closeModalHandler }) {
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
+      overFlow: "hidden",
       boxShadow: "rgba(100, 100, 111, 0.3) 0px 7px 29px 0px",
-      backgroundColor: "white",
+      backgroundColor: "#f1f5f9",
       border: "2px solid rgb(240, 240, 240)",
       borderRadius: "12px",
       position: "absolute",
-      height: "fit-content",
-      width: "90%", // Responsive width for smaller screens
-      maxWidth: "500px", // Limit max width for larger screens
+      height: "400px",
+
+      width: "400px", // Responsive width for smaller screens
+      // maxWidth: "500px", // Limit max width for larger screens
       top: "50%",
       left: "50%",
       transform: "translate(-50%, -50%)", // Center modal
@@ -43,7 +49,51 @@ function ProjectModal({ project, isModalOpen, closeModalHandler }) {
         onRequestClose={closeModalHandler}
         style={modalStyle}
       >
+        <span
+          className="absolute right-2 top-1 cursor-pointer"
+          onClick={closeModalHandler}
+        >
+          <X />
+        </span>
+
         <Swiper
+          effect={"cube"}
+          grabCursor={true}
+          cubeEffect={{
+            shadow: true,
+            slideShadows: true,
+            shadowOffset: 20,
+            shadowScale: 0.5,
+          }}
+          loop={project?.images.length >= 3}
+          pagination={true}
+          modules={[EffectCube, Pagination]}
+          className="mySwiper"
+        >
+          {project?.images.map((image, imgIdx) => (
+            <SwiperSlide
+              style={{
+                width: "300px",
+                background: "#f1f5f9",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+              key={imgIdx}
+            >
+              <img src={image} loading="lazy" />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </Modal>
+    </div>
+  );
+}
+
+export default ProjectModal;
+
+{
+  /* <Swiper
           modules={[EffectCoverflow]} // Register the coverflow effect module
           effect="coverflow" // Set effect to coverflow
           coverflowEffect={{
@@ -72,10 +122,5 @@ function ProjectModal({ project, isModalOpen, closeModalHandler }) {
               <img src={image} loading="lazy" />
             </SwiperSlide>
           ))}
-        </Swiper>
-      </Modal>
-    </div>
-  );
+        </Swiper> */
 }
-
-export default ProjectModal;

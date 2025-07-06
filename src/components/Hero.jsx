@@ -1,5 +1,5 @@
 import { ChevronDown, ArrowRight } from "lucide-react";
-import HeroImg from "../../public/assets/hero.svg";
+import HeroImg from "../../public/assets/SubLogo.jpg";
 
 function Hero() {
   return (
@@ -68,7 +68,7 @@ function Hero() {
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 transform animate-bounce">
           <a href="#work">
-            <ChevronDown className="h-6 w-6 text-gray-400" />
+            <ChevronDown className="ml-[-10px] h-6 w-6 text-gray-400" />
           </a>
         </div>
       </div>

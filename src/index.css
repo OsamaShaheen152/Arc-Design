@@ -6,7 +6,8 @@
 
 body {
   /* max-width: 1200px; */
-  margin: auto;
+  /* margin: auto; */
+  overflow-x: hidden;
 }
 
 * {
@@ -114,4 +115,27 @@ textarea:focus {
   .backdrop-blur-sm {
     backdrop-filter: blur(4px);
   }
+}
+
+/* For Image Slider */
+
+.swiper {
+  width: 300px;
+  height: 300px;
+  transform: translateX(-350px);
+  transform: translatey(-5px);
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: contain;
+  margin: auto;
+}
+
+.swiper-slide img {
+  display: block;
+  background-size: contain;
+
+  width: 100%;
+  height: 80%;
 }
