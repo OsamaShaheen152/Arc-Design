@@ -46,7 +46,7 @@ const ProjectCard = ({ project, onClick, index }) => {
         </div>
       </div>
 
-      <div className="p-6">
+      <div className="flex flex-col p-6">
         {/* this for dots */}
         <div className="mb-3 flex items-center justify-between">
           <div className="flex items-center space-x-1">
@@ -60,8 +60,8 @@ const ProjectCard = ({ project, onClick, index }) => {
           </div>
         </div>
 
-        <h3 className="mb-3 line-clamp-2 text-xl font-bold text-gray-900 transition-colors duration-300 group-hover:text-blue-600">
-          {project.title}
+        <h3 className="mb-3 line-clamp-2 text-xl font-bold text-gray-900 transition-colors duration-300">
+          {project.project_name}
         </h3>
       </div>
     </div>

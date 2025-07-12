@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-cube";
 import "swiper/css/pagination";
-import { EffectCube, Pagination } from "swiper/modules";
+import { Autoplay, EffectCube, Pagination } from "swiper/modules";
 import { X } from "lucide-react";
 
 Modal.setAppElement("#root");
@@ -67,7 +67,8 @@ function ProjectModal({ project, isModalOpen, closeModalHandler }) {
           }}
           loop={project?.images.length >= 3}
           pagination={true}
-          modules={[EffectCube, Pagination]}
+          autoplay={{ delay: 2000, disableOnInteraction: false }}
+          modules={[EffectCube, Autoplay, Pagination]}
           className="mySwiper"
         >
           {project?.images.map((image, imgIdx) => (

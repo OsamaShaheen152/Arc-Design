@@ -1,5 +1,5 @@
-import { Home, Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
-
+import { Home, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 function Footer() {
   return (
     <footer
@@ -7,7 +7,6 @@ function Footer() {
       className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Main Footer Content */}
         <div className="grid grid-cols-1 gap-8 py-16 md:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
           <div className="lg:col-span-2">
@@ -30,13 +29,8 @@ function Footer() {
             </p>
             <div className="flex items-center space-x-4">
               <a
-                href="#"
-                className="rounded-full bg-white/10 p-3 transition-all duration-200 hover:scale-110 hover:bg-white/20"
-              >
-                <Github className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
+                href="https://www.linkedin.com/in/shimaa-adbullah-272692209/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                target="_blank"
                 className="rounded-full bg-white/10 p-3 transition-all duration-200 hover:scale-110 hover:bg-white/20"
               >
                 <Linkedin className="h-5 w-5" />
@@ -64,20 +58,21 @@ function Footer() {
                   Home
                 </a>
               </li>
-              <li>
-                <a
-                  href="#work"
-                  className="inline-block transform text-gray-300 transition-colors duration-200 hover:translate-x-1 hover:text-white"
-                >
-                  Our Work
-                </a>
-              </li>
+
               <li>
                 <a
                   href="#projects"
                   className="inline-block transform text-gray-300 transition-colors duration-200 hover:translate-x-1 hover:text-white"
                 >
                   Projects
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#catalogs"
+                  className="inline-block transform text-gray-300 transition-colors duration-200 hover:translate-x-1 hover:text-white"
+                >
+                  Catalogs
                 </a>
               </li>
             </ul>
@@ -89,21 +84,29 @@ function Footer() {
               Get in Touch
             </h4>
             <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 flex-shrink-0 text-blue-400" />
-                <p className="text-sm text-gray-300">01093039374</p>
+              <div className="">
+                <a
+                  href="https://wa.me/201093039374"
+                  className="flex items-center gap-x-3 text-sm text-gray-300"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <WhatsAppIcon className="h-5 w-5 flex-shrink-0 text-blue-400" />
+                  01093039374 (WhatsApp)
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 flex-shrink-0 text-blue-400" />
                 <p className="text-sm text-gray-300">01100859083</p>
               </div>
-              <div className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 flex-shrink-0 text-blue-400" />
+
+              <div className="">
                 <a
-                  href="mailto:osamashaheen152@gmail.com"
-                  className="text-sm text-gray-300"
+                  href="mailto:makeitorganized102020@gmail.com"
+                  className="flex items-center gap-x-3 text-sm text-gray-300"
                 >
-                  osamashaheen152@gmail.com
+                  <Mail className="h-5 w-5 flex-shrink-0 text-blue-400" />
+                  makeitorganized102020@gmail.com
                 </a>
               </div>
             </div>

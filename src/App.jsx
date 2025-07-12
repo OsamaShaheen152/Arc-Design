@@ -6,6 +6,9 @@ import MainWork from "./components/MainWork";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ProjectModal from "./components/ProjectModal";
+import Excution from "./components/Excution";
+import ResidentialCatalog from "./components/ResidentialCatalog";
+import CommercialCatalog from "./components/CommercialCatalog";
 function App() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -30,12 +33,17 @@ function App() {
         <section id="home">
           <Hero />
         </section>
-        <section id="work" className="py-12">
+        <section id="expertise">
           <MainWork />
         </section>
 
         <section id="projects" className="bg-white/50 py-12">
-          <LatestWork openModalHandler={openModalHandler} />
+          <LatestWork />
+          <Excution />
+          <section id="catalogs">
+            <ResidentialCatalog openModalHandler={openModalHandler} />
+            <CommercialCatalog openModalHandler={openModalHandler} />
+          </section>
         </section>
         <ProjectModal
           project={selectedProject}

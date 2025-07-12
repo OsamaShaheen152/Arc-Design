@@ -42,11 +42,11 @@ function MainWork() {
           </p>
         </div>
 
-        <div className="flex flex-col items-center justify-center gap-8 md:flex-row">
+        <div className="flex flex-col flex-wrap items-center justify-center gap-8 md:flex-row">
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative transform overflow-hidden rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+              className="shaheen--main--work--animation group relative w-96 transform overflow-hidden rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
             >
               {/* Background Gradient */}
               <div
