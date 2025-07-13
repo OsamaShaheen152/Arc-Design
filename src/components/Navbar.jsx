@@ -13,10 +13,10 @@ function Navbar() {
                 <Home className="h-6 w-6 text-white" />
               </div>
               <div>
-                <span className="text-xl font-bold text-gray-900">
+                <span className="w-full text-xl font-bold text-gray-900">
                   Make It Organized
                 </span>
-                <p className="text-xs text-gray-500">Architecture & Interior</p>
+                {/* <p className="text-xs text-gray-500">Architecture & Interior</p> */}
               </div>
             </div>
           </a>
