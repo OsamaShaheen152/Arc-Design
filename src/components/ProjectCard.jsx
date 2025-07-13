@@ -32,11 +32,11 @@ const ProjectCard = ({ project, onClick, index }) => {
         )}
         <img
           src={imageError ? fallbackImage : project.images[0]}
+          loading="lazy"
           alt={project.title}
           className={`h-full w-full object-cover transition-all duration-700 group-hover:scale-110 ${
             imageLoaded ? "opacity-100" : "opacity-0"
           }`}
-          loading="lazy"
           onError={handleImageError}
           onLoad={handleImageLoad}
         />
