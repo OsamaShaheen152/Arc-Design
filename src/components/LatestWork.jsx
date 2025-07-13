@@ -39,8 +39,6 @@ const LatestWork = () => {
             <video
               className="w-96 rounded-md shadow-md"
               controls
-              autoPlay
-              loop
               muted
               key={project.id}
             >
