@@ -41,7 +41,7 @@ const ProjectCard = ({ project, onClick, index }) => {
           onLoad={handleImageLoad}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-        <div className="absolute right-4 top-4 translate-y-2 transform rounded-full bg-white/90 p-3 opacity-0 shadow-lg backdrop-blur-sm transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+        <div className="absolute right-4 top-4 transform rounded-full bg-white/90 p-3 shadow-lg backdrop-blur-sm transition-all duration-500">
           <ExternalLink className="h-5 w-5 text-gray-700" />
         </div>
       </div>
