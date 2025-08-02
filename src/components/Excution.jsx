@@ -1,3 +1,4 @@
+import React from "react";
 const PROJECTS = [
   {
     id: 1,
@@ -11,21 +12,21 @@ const PROJECTS = [
 function Excution() {
   return (
     <div className="py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="mb-16 text-center">
           <h2 className="mb-6 text-4xl font-bold text-gray-900 sm:text-5xl">
             Our Latest
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="text-transparent bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text">
               Excution
             </span>
           </h2>
         </div>
 
         {/* Projects Grid */}
-        <div className="flex flex-wrap items-center justify-evenly gap-8 sm:flex-row">
+        <div className="flex flex-wrap items-center gap-8 justify-evenly sm:flex-row">
           {PROJECTS.map((project) => (
             <video
-              className="w-96 rounded-md shadow-md"
+              className="rounded-md shadow-md w-96"
               controls
               muted
               key={project.id}

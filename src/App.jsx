@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { Code2, Github, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 import Hero from "./components/Hero";
@@ -37,7 +38,7 @@ function App() {
           <MainWork />
         </section>
 
-        <section id="projects" className="bg-white/50 py-12">
+        <section id="projects" className="py-12 bg-white/50">
           <LatestWork />
           <Excution />
           <section id="catalogs">

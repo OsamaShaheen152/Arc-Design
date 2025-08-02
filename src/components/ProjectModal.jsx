@@ -1,5 +1,7 @@
 // import { EffectCoverflow } from "swiper/modules";
 // import "swiper/css/effect-coverflow";
+
+import React from "react";
 import Modal from "react-modal";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -50,7 +52,7 @@ function ProjectModal({ project, isModalOpen, closeModalHandler }) {
         style={modalStyle}
       >
         <span
-          className="absolute right-2 top-1 cursor-pointer"
+          className="absolute cursor-pointer right-2 top-1"
           onClick={closeModalHandler}
         >
           <X />

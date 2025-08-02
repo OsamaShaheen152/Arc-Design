@@ -1,23 +1,24 @@
+import React from "react";
 import { Palette, Home, Building, Lightbulb } from "lucide-react";
 
 function MainWork() {
   const services = [
     {
-      icon: <Building className="h-8 w-8" />,
+      icon: <Building className="w-8 h-8" />,
       title: "Residential",
       description:
         " Crafting personalized, functional, and aesthetically pleasing home interiors, tailored to clients' lifestyles, with a focus on comfort, space optimization, and timeless design.",
       color: "from-blue-500 to-blue-600",
     },
     {
-      icon: <Home className="h-8 w-8" />,
+      icon: <Home className="w-8 h-8" />,
       title: "Commercial",
       description:
         "Designing dynamic, professional spaces for businesses, emphasizing brand identity, functionality, and user experience to enhance productivity and client engagement.",
       color: "from-purple-500 to-purple-600",
     },
     {
-      icon: <Palette className="h-8 w-8" />,
+      icon: <Palette className="w-8 h-8" />,
       title: "Shop Drawings",
       description:
         "Producing detailed technical drawings for interior elements, ensuring precise implementation of design concepts with accurate measurements, materials, and construction details.",
@@ -26,16 +27,16 @@ function MainWork() {
   ];
 
   return (
-    <div className="bg-gradient-to-br from-gray-50 to-white py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="mb-16 text-center">
           <h2 className="mb-6 text-4xl font-bold text-gray-900 sm:text-5xl">
             Our{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="text-transparent bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text">
               Expertise
             </span>
           </h2>
-          <p className="mx-auto max-w-3xl text-xl leading-relaxed text-gray-600">
+          <p className="max-w-3xl mx-auto text-xl leading-relaxed text-gray-600">
             We specialize in creating exceptional spaces that combine innovative
             design with practical functionality. Our comprehensive services
             cover every aspect of architectural and interior design.
@@ -46,7 +47,7 @@ function MainWork() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="shaheen--main--work--animation group relative w-96 transform overflow-hidden rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+              className="relative p-8 overflow-hidden transition-all duration-500 transform bg-white border border-gray-100 shadow-lg shaheen--main--work--animation group w-96 rounded-2xl hover:-translate-y-2 hover:shadow-2xl"
             >
               {/* Background Gradient */}
               <div
